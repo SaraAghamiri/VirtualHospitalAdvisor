@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VirtualHospitalAdvisor — Pain Assessment</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>VirtualHospitalAdvisor</h1>
+<h2>Section 0 — Pain Identification &amp; Prioritization</h2>
+
+<p>
+Identify the organizational pains driving the decision.
+The output determines whether Virtual Hospital investment is appropriate.
+</p>
+
+<!-- ================= PHASE A ================= -->
+<div id="phaseA">
+
+<form id="painForm">
+
+<h3>PA-01. Capacity and Access Pains</h3>
+<div id="painQuestions">
+  <label><input type="checkbox" name="pain" value="Bed capacity shortage" data-category="PA01"> A) Bed capacity shortage</label>
+  <label><input type="checkbox" name="pain" value="Long ED wait times" data-category="PA01"> B) Long ED wait times</label>
+  <label><input type="checkbox" name="pain" value="Geographic access barriers" data-category="PA01"> C) Geographic access barriers</label>
+  <label><input type="checkbox" name="pain" value="Specialist access gap" data-category="PA01"> D) Specialist access gap</label>
+  <label><input type="checkbox" name="pain" value="Post acute bottleneck" data-category="PA01"> E) Post-acute bottleneck</label>
+  <label><input type="checkbox" name="pain" value="After hours coverage gaps" data-category="PA01"> F) After-hours coverage gaps</label>
+</div>
+
+<h3>PA-02. Financial and Operational Pains</h3>
+<label><input type="checkbox" name="pain" value="High cost per inpatient stay" data-category="PA02"> High cost per inpatient stay</label>
+<label><input type="checkbox" name="pain" value="Avoidable readmission costs" data-category="PA02"> Avoidable readmission costs</label>
+<label><input type="checkbox" name="pain" value="Shrinking operating margin" data-category="PA02"> Shrinking operating margin</label>
+<label><input type="checkbox" name="pain" value="Inefficient care utilization" data-category="PA02"> Inefficient care utilization</label>
+
+<h3>PA-03. Clinical Quality Pains</h3>
+<label><input type="checkbox" name="pain" value="High readmission rates" data-category="PA03"> High readmission rates</label>
+<label><input type="checkbox" name="pain" value="Preventable deterioration" data-category="PA03"> Preventable deterioration</label>
+<label><input type="checkbox" name="pain" value="Poor chronic disease outcomes" data-category="PA03"> Poor chronic disease outcomes</label>
+
+<h3>PA-04. Workforce Pains</h3>
+<label><input type="checkbox" name="pain" value="Physician burnout" data-category="PA04"> Physician and nurse burnout</label>
+<label><input type="checkbox" name="pain" value="Staffing shortages" data-category="PA04"> Staffing shortages</label>
+<label><input type="checkbox" name="pain" value="Specialist retention" data-category="PA04"> Specialist retention difficulty</label>
+
+<h3>PA-05. Strategic Pains</h3>
+<label><input type="checkbox" name="pain" value="Competitor virtual care threat" data-category="PA05"> Competitor virtual care threat</label>
+<label><input type="checkbox" name="pain" value="Market share decline" data-category="PA05"> Market share decline</label>
+<label><input type="checkbox" name="pain" value="Regulatory mandate" data-category="PA05"> Regulatory mandate</label>
+
+</form>
+
+<button type="button" class="btn-primary" onclick="buildPhaseB()">
+  Continue to Pain Scoring &rarr;
+</button>
+
+</div>
+
+<hr>
+
+<!-- ================= PHASE B ================= -->
+<div id="phaseB" class="hidden">
+  <h2>Phase B — Score Each Selected Pain</h2>
+  <p>For every pain you selected, rate its Severity, Urgency, and Frequency (1-5 each).</p>
+  <div id="phaseBRows"></div>
+  <button type="button" class="btn-primary" onclick="calculateAndRank()">
+    Calculate &amp; Rank Pains &rarr;
+  </button>
+</div>
+
+<!-- ================= PHASE C ================= -->
+<div id="phaseC" class="hidden">
+  <h2>Phase C — Ranked Pain Priority</h2>
+  <div id="phaseCList"></div>
+</div>
+
+<!-- ================= PHASE D ================= -->
+<div id="phaseD" class="hidden">
+  <h2>Phase D — Solution Fit (Top 3 Pains)</h2>
+  <p>For each of your top 3 ranked pains, answer the following.</p>
+  <div id="phaseDRows"></div>
+  <button type="button" class="btn-primary" onclick="finalizeAndContinue()">
+    Continue to Readiness &amp; Recommendation &rarr;
+  </button>
+</div>
+
+<div id="result"></div>
+
+</div>
+
+<script src="questionnaire.js"></script>
+
+</body>
+</html>

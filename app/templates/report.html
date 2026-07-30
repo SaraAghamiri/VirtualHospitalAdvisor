@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VirtualHospitalAdvisor — Recommendation Report</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1>VirtualHospitalAdvisor</h1>
+  <h2>Recommendation Report</h2>
+  <p class="footnote">Generated locally in your browser. No data was sent to a server.</p>
+
+  <div id="reportBody"></div>
+
+  <div class="no-print">
+    <button type="button" class="btn-primary" onclick="window.print()">Print / Save as PDF</button>
+    <button type="button" class="btn-secondary" onclick="startOver()">Start a New Assessment</button>
+  </div>
+
+</div>
+
+<script src="report.js"></script>
+</body>
+</html>

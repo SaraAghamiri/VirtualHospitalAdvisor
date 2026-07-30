@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>VirtualHospitalAdvisor — Readiness &amp; Recommendation</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>VirtualHospitalAdvisor</h1>
+<h2>Section 1 — Organizational Readiness</h2>
+<p>Rate your organization's readiness in each area (1 = not ready, 5 = fully ready).</p>
+
+<div id="noPains" class="hidden">
+  <p class="note">No pain assessment found. <a href="questionnaire.html">Start the pain assessment first &rarr;</a></p>
+</div>
+
+<form id="readinessForm">
+
+  <label>Clinical Readiness
+    <input type="range" min="1" max="5" value="3" id="r_clinical" oninput="tick('r_clinical')">
+    <span class="tick" id="r_clinical_val">3</span>
+  </label>
+
+  <label>Technology Readiness (EHR integration, cloud, connectivity)
+    <input type="range" min="1" max="5" value="3" id="r_technology" oninput="tick('r_technology')">
+    <span class="tick" id="r_technology_val">3</span>
+  </label>
+
+  <label>Data &amp; Analytics Maturity
+    <input type="range" min="1" max="5" value="3" id="r_data" oninput="tick('r_data')">
+    <span class="tick" id="r_data_val">3</span>
+  </label>
+
+  <label>Workforce Readiness (training capacity, change management)
+    <input type="range" min="1" max="5" value="3" id="r_workforce" oninput="tick('r_workforce')">
+    <span class="tick" id="r_workforce_val">3</span>
+  </label>
+
+  <label>Financial Readiness (capital availability)
+    <input type="range" min="1" max="5" value="3" id="r_financial" oninput="tick('r_financial')">
+    <span class="tick" id="r_financial_val">3</span>
+  </label>
+
+  <label>Simulation / Training Infrastructure Readiness
+    <input type="range" min="1" max="5" value="3" id="r_training" oninput="tick('r_training')">
+    <span class="tick" id="r_training_val">3</span>
+  </label>
+
+  <label class="checkbox-label">
+    <input type="checkbox" id="r_roi">
+    A validated ROI model already exists for this type of investment
+  </label>
+
+</form>
+
+<button type="button" class="btn-primary" onclick="runRecommendation()">
+  Generate Recommendation &rarr;
+</button>
+
+<div id="recommendationOutput"></div>
+
+</div>
+
+<script src="recommendation.js"></script>
+</body>
+</html>
