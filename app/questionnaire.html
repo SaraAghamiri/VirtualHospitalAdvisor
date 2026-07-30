@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VirtualHospitalAdvisor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>VirtualHospitalAdvisor</h1>
+
+<h2>Section 0 — Pain Identification & Prioritization</h2>
+
+<p>
+Identify the organizational pains driving the decision.
+The output determines whether Virtual Hospital investment is appropriate.
+</p>
+
+
+<form id="painForm">
+
+
+<h3>PA-01. Capacity and Access Pains</h3>
+
+<div id="painQuestions">
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Bed capacity shortage">
+A) Bed capacity shortage
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Long ED wait times">
+B) Long ED wait times
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Geographic access barriers">
+C) Geographic access barriers
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Specialist access gap">
+D) Specialist access gap
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Post acute bottleneck">
+E) Post-acute bottleneck
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="After hours coverage gaps">
+F) After-hours coverage gaps
+</label>
+
+
+</div>
+
+
+
+<h3>PA-02. Financial and Operational Pains</h3>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="High cost per inpatient stay">
+
+High cost per inpatient stay
+
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Avoidable readmission costs">
+
+Avoidable readmission costs
+
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Shrinking operating margin">
+
+Shrinking operating margin
+
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Inefficient care utilization">
+
+Inefficient care utilization
+
+</label>
+
+
+
+<h3>PA-03. Clinical Quality Pains</h3>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="High readmission rates">
+
+High readmission rates
+
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Preventable deterioration">
+
+Preventable deterioration
+
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Poor chronic disease outcomes">
+
+Poor chronic disease outcomes
+
+</label>
+
+
+
+<h3>PA-04. Workforce Pains</h3>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Physician burnout">
+
+Physician and nurse burnout
+
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Staffing shortages">
+
+Staffing shortages
+
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Specialist retention">
+
+Specialist retention difficulty
+
+</label>
+
+
+
+
+<h3>PA-05. Strategic Pains</h3>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Competitor virtual care threat">
+
+Competitor virtual care threat
+
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Market share decline">
+
+Market share decline
+
+</label>
+
+
+<label>
+<input type="checkbox" name="pain"
+value="Regulatory mandate">
+
+Regulatory mandate
+
+</label>
+
+
+
+<hr>
+
+
+<h2>Phase B — Pain Scoring</h2>
+
+
+<p>
+For each selected pain, enter:
+</p>
+
+
+<label>
+Severity (1-5):
+<input id="severity" type="number" min="1" max="5">
+</label>
+
+
+<br>
+
+
+<label>
+Urgency (1-5):
+<input id="urgency" type="number" min="1" max="5">
+</label>
+
+
+<br>
+
+
+<label>
+Frequency (1-5):
+<input id="frequency" type="number" min="1" max="5">
+</label>
+
+
+<br><br>
+
+
+<button type="button" onclick="calculateScore()">
+Calculate Pain Priority Score
+</button>
+
+
+</form>
+
+
+<div id="result"></div>
+
+
+</div>
+
+
+<script src="questionnaire.js"></script>
+
+</body>
+
+</html>
